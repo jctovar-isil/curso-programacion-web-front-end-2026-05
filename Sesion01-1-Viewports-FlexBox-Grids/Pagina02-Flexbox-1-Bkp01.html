@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <!-- Importante: ajusta la escala al ancho del dispositivo -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo: meta viewport</title>
+  <style>
+    img {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+    }
+    .container_flex {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      
+    }
+    .item-cabecera {
+      flex-grow: 10;
+      flex-shrink: 1;
+      background-color: cadetblue;
+    }
+
+    .item-cuerpo {
+      flex-grow: 2;
+      flex-shrink: 1;
+      background-color: bisque;
+    }
+
+    .item-pie {
+      flex-grow: 1;
+      flex-shrink: 1;
+      background-color: chocolate;
+    }
+    .container_grid {  
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 3px 3px;
+      grid-auto-flow: row;
+      grid-template-areas:
+        ". ."
+        ". .";
+    }
+
+  </style>
+</head>
+<body>
+  
+  <h1>ISIL - Ejemplo de Flexbox con Grid</h1>
+
+  <div class="container_flex">
+    <div class="item-cabecera">
+      <header style="text-align:center; padding:1rem; color:#b6e9e3; font-size:48px">
+        <p>ISIL - Bienvenidos al Curso de Desarrollo Web Front-End</p>
+      </header>
+    </div>
+    <div class="item-cuerpo">
+      <div class="container_grid">
+        <div>
+          <p>La etiqueta <code>&lt;meta name="viewport" ...&gt;</code> adapta la escala al ancho del dispositivo.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+            mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+            mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+            mollit anim id est laborum.
+          </p>
+        </div>
+        <div>
+          <img src="imgs/img01-paisaje001.jpg" alt="Ejemplo responsive">
+        </div>
+        <div>
+          <p>La etiqueta <code>&lt;meta name="viewport" ...&gt;</code> adapta la escala al ancho del dispositivo.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+            mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+            mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+            mollit anim id est laborum.
+          </p>
+        </div>
+        <div>
+          <img src="imgs/img01-paisaje001.jpg" alt="Ejemplo responsive">
+        </div>
+      </div>
+    </div>
+    <div class="item-pie">
+      <footer style="text-align:center; padding:1rem; color:#666;">
+        <p>&copy; Ejemplo — Prueba la vista en DevTools (Ctrl+Shift+M)</p>
+      </footer>
+    </div>
+  </div>
+
+</body>
+
+</html>
