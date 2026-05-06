@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <!-- Importante: ajusta la escala al ancho del dispositivo -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ejemplo: meta viewport</title>
+  <title>ISIL - Ejemplo de Flexbox Simple</title>
   <style>
     img {
       max-width: 100%;
@@ -21,26 +21,73 @@
 
     .item-0 {
       flex-grow: 2;
-      flex-shrink: 0;
+      /*
+      flex-shrink: 1;
+      Controla cuánto puede encogerse un item cuando NO hay espacio suficiente:
+        - flex-shrink: 0; el item no se encoge, mantiene su tamaño.
+        - flex-shrink: 1; el item se encoge proporcionalmente al espacio disponible.
+        - flex-shrink: 2; el item se encoge el doble que con flex-shrink: 1, es decir, se encoge más rápido que los items con flex-shrink: 1.
+      */
+      flex-shrink: 1;
+      /*
+      flex-basis: 0;
+      Define el tamaño inicial del item flex antes de que entren en juego flex-grow y flex-shrink,
+      flex-basis: 0 significa: ignora el contenido, empieza desde cero y luego:
+          - El espacio total se reparte solo por flex-grow.
+          - Las columnas se reparten perfectamente proporcionales.
+      */
+      flex-basis: 0;
     }
 
     .item-1 {
       flex-grow: 3;
+      /*
+      flex-shrink: 1;
+      Controla cuánto puede encogerse un item cuando NO hay espacio suficiente:
+        - flex-shrink: 0; el item no se encoge, mantiene su tamaño.
+        - flex-shrink: 1; el item se encoge proporcionalmente al espacio disponible.
+        - flex-shrink: 2; el item se encoge el doble que con flex-shrink: 1, es decir, se encoge más rápido que los items con flex-shrink: 1.
+      */
+      flex-shrink: 1;
+      /*
+      flex-basis: 0;
+      Define el tamaño inicial del item flex antes de que entren en juego flex-grow y flex-shrink,
+      flex-basis: 0 significa: ignora el contenido, empieza desde cero y luego:
+          - El espacio total se reparte solo por flex-grow.
+          - Las columnas se reparten perfectamente proporcionales.
+      */
+      flex-basis: 0;
     }
 
     .item-2 {
       flex-grow: 1;
+      /*
+      flex-shrink: 1;
+      Controla cuánto puede encogerse un item cuando NO hay espacio suficiente:
+        - flex-shrink: 0; el item no se encoge, mantiene su tamaño.
+        - flex-shrink: 1; el item se encoge proporcionalmente al espacio disponible.
+        - flex-shrink: 2; el item se encoge el doble que con flex-shrink: 1, es decir, se encoge más rápido que los items con flex-shrink: 1.
+      */
+      flex-shrink: 1;
+      /*
+      flex-basis: 0;
+      Define el tamaño inicial del item flex antes de que entren en juego flex-grow y flex-shrink,
+      flex-basis: 0 significa: ignora el contenido, empieza desde cero y luego:
+          - El espacio total se reparte solo por flex-grow.
+          - Las columnas se reparten perfectamente proporcionales.
+      */
+      flex-basis: 0;
     }
 
   </style>
 </head>
 <body>
-  
-  <h1>ISIL - Ejemplo de Flexbox</h1>
+
+  <h1>ISIL - Ejemplo de Flexbox Simple</h1>
 
   <div class="container">
     <div class="item-0">
-      La etiqueta <code>&lt;meta name="viewport" ...&gt;</code> adapta la escala al ancho del dispositivo.
+      <p>La etiqueta <code>&lt;meta name="viewport" ...&gt;</code> adapta la escala al ancho del dispositivo.
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
           dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
           ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
@@ -55,13 +102,13 @@
           dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
           ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
           fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-          mollit anim id est laborum.
+          mollit anim id est laborum.</p>
     </div>
     <div class="item-1">
       <img src="imgs/img01-paisaje001.jpg" alt="Ejemplo responsive">
     </div>
     <div class="item-2">
-       La etiqueta <code>&lt;meta name="viewport" ...&gt;</code> adapta la escala al ancho del dispositivo.
+      <p>La etiqueta <code>&lt;meta name="viewport" ...&gt;</code> adapta la escala al ancho del dispositivo.
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
           dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
           ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
@@ -76,7 +123,7 @@
           dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
           ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
           fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-          mollit anim id est laborum.
+          mollit anim id est laborum.</p>
     </div>
   </div>
 

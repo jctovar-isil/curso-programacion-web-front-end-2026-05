@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+
+<!--
+  JCTU: Configuración del Viewport (Ventana Gráfica)
+  - Width=device-width  → Ajusta el diseño al ancho del dispositivo
+  - Initial-scale=1.0   → Evita el zoom inicial al cargar la página
+-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ISIL - Ejemplo Especial con CSS Grid</title>
+
+<style>
+/* --------------------------------------------------------------
+    JCTU: Reset Global del Modelo de Caja
+    Box-Sizing Border-Box asegura que el padding y el borde
+    estén incluidos en las dimensiones totales del elemento.
+   -------------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------
+    JCTU: Estilos Base del Body
+    Establece la tipografía global y el fondo de tema oscuro.
+   -------------------------------------------------------------- */
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #0f172a;
+  color: white;
+}
+
+/* --------------------------------------------------------------
+    JCTU: Estilos del Título Principal
+   -------------------------------------------------------------- */
+h1 {
+  text-align: center;
+  margin: 2rem 0;
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------
+    JCTU: Contenedor Principal de la Cuadrícula (Grid)
+   -------------------------------------------------------------- */
+.container {
+    /* 
+    Display Grid activa el diseño de cuadrícula CSS.
+    Este elemento se convierte en el contenedor padre.
+    */
+    display: grid;
+
+    /* 
+    Grid-Template-Columns: repeat(3, 1fr)
+      - Crea tres columnas de igual ancho.
+      - Cada columna ocupa una fracción (1fr) del espacio disponible.
+
+    Representación Visual:
+    | 1fr (33.333%) | 1fr (33.333%) | 1fr (33.333%) |
+    */
+    grid-template-columns: repeat(3, 1fr);
+
+    /* 
+    Gap define el espacio entre filas y columnas.
+    Reemplaza el uso antiguo de márgenes en los elementos hijos.
+    */
+    gap: 1.5rem;
+
+    /* 
+      Padding añade espacio interno alrededor de la cuadrícula.
+    */
+    padding: 1.5rem;
+}
+
+/* --------------------------------------------------------------
+    JCTU: Tarjeta de Item del Grid
+   -------------------------------------------------------------- */
+.card {
+    /* 
+      Position Relative permite el posicionamiento absoluto de elementos internos
+      (como el pie de foto o capas de superposición).
+    */
+    position: relative;
+
+    /* 
+      Bordes redondeados para una apariencia de interfaz moderna.
+    */
+    border-radius: 18px;
+
+    /* 
+      Overflow Hidden asegura que las imágenes y efectos no se salgan de
+      los límites redondeados de la tarjeta.
+    */
+    overflow: hidden;
+
+    /* 
+      Cursor Pointer indica que el elemento es interactivo.
+    */
+    cursor: pointer;
+}
+
+/* --------------------------------------------------------------
+    JCTU: Comportamiento de la Imagen de la Tarjeta
+   -------------------------------------------------------------- */
+.card img {
+    /* 
+      La imagen ocupa todo el ancho y alto del contenedor de la tarjeta.
+    */
+    width: 100%;
+    height: 100%;
+
+    /* 
+      Object-Fit Cover preserva la relación de aspecto de la imagen
+      llenando el contenedor sin deformarla.
+    */
+    object-fit: cover;
+}
+
+/* --------------------------------------------------------------
+    JCTU: Capa de Superposición (Overlay)
+   -------------------------------------------------------------- */
+.card::after {
+    /* 
+      Pseudo-elemento utilizado para capas decorativas como degradados o
+      efectos de iluminación al pasar el mouse.
+    */
+    content: "";
+
+    /* 
+      Posicionado absolutamente sobre la capa de la imagen.
+    */
+    position: absolute;
+
+    /* 
+      Esta capa está preparada para futuras mejoras (fondos, opacidad, transiciones, etc.).
+    */
+}
+
+/* --------------------------------------------------------------
+    JCTU: Texto del Pie de Foto (Caption)
+   -------------------------------------------------------------- */
+.caption {
+    /* 
+      Posicionamiento absoluto dentro de la tarjeta.
+    */
+    position: absolute;
+
+    /* 
+      Anclado a la esquina inferior izquierda.
+    */
+    bottom: 1rem;
+    left: 1rem;
+
+    /* 
+      Z-Index asegura que el texto aparezca sobre la imagen
+      y sobre cualquier capa de superposición decorativa.
+    */
+    z-index: 2;
+}
+
+/* --------------------------------------------------------------
+    JCTU: Tipografía del Pie de Foto
+   -------------------------------------------------------------- */
+.caption h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.caption p {
+  margin: .3rem 0 0;
+  font-size: .85rem;
+  opacity: .9;
+}
+
+/* --------------------------------------------------------------
+    JCTU: Comportamiento Responsivo (Media Queries)
+   -------------------------------------------------------------- */
+@media (max-width: 900px) {
+
+    .container {
+      /* 
+        La cuadrícula se adapta a una sola columna.
+        Ideal para dispositivos móviles y tablets pequeñas.
+      */
+      grid-template-columns: 1fr;
+    }
+
+    .card {
+      /* 
+        Altura fija para asegurar consistencia visual
+        en el diseño vertical de móviles.
+      */
+      height: 260px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<h1>ISIL - Ejemplo Especial con CSS Grid</h1>
+
+<!-- --------------------------------------------------------------
+    JCTU: Envoltura de Contenido de la Cuadrícula
+  -------------------------------------------------------------- -->
+<div class="container">
+
+  <!-- JCTU: Tarjeta de Item 01 -->
+  <div class="card">
+    <img src="imgs/img01-paisaje001.jpg" alt="Paisaje 1">
+    <div class="caption">
+      <h2>Montañas</h2>
+      <p>Naturaleza en estado puro</p>
+    </div>
+  </div>
+
+  <!-- JCTU: Tarjeta de Item 02 -->
+  <div class="card">
+    <img src="imgs/img01-paisaje001.jpg" alt="Paisaje 2">
+    <div class="caption">
+      <h2>Lagos</h2>
+      <p>Reflejos y calma</p>
+    </div>
+  </div>
+
+  <!-- JCTU: Tarjeta de Item 03 -->
+  <div class="card">
+    <img src="imgs/img01-paisaje001.jpg" alt="Paisaje 3">
+    <div class="caption">
+      <h2>Bosques</h2>
+      <p>Respira tranquilidad</p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

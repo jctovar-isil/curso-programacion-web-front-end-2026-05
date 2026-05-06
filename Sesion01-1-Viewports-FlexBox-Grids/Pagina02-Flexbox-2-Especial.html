@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+
+<!--
+  El viewport permite que Flexbox se comporte correctamente en móviles,
+  ya que el ancho real del dispositivo coincide con el CSS viewport.
+-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ISIL - Ejemplo de Flexbox Especial</title>
+
+<style>
+
+/* =========================
+   CONFIGURACIÓN GENERAL
+   ========================= */
+
+/*
+  box-sizing: border-box
+  Asegura que padding y border no alteren el tamaño final
+  de los elementos flex, evitando cálculos inesperados.
+*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  background: #f5f7fa;
+}
+
+h1 {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+/* --------------------------------------------------------------
+    JCTU: Contenedor Flex Principal (Paneles)
+-------------------------------------------------------------- */
+
+/*
+  .container es un Flex Container, por lo tanto:
+  --------------------------------
+  Todos sus hijos directos se convierten en Flex Items.
+*/
+.container {
+
+  /* Activa Flexbox (eje principal horizontal por defecto) */
+  display: flex;
+
+  /*
+    gap:
+    Define el espacio ENTRE los flex-items
+    (reemplaza márgenes laterales)
+  */
+  gap: 1rem;
+
+  padding: 1rem;
+
+  /*
+    align-items: stretch (valor por defecto)
+    Hace que todos los items se estiren
+    para tener la misma altura.
+  */
+  align-items: stretch;
+}
+
+/* --------------------------------------------------------------
+    JCTU: Flex Items (Tarjetas)
+   -------------------------------------------------------------- */
+
+/*
+  .panel es un Flex Item (hijo de .container) y a la vez un Flex Container interno.
+*/
+.panel {
+
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+
+  /*
+    display: flex
+    Convierte cada panel en contenedor flex para organizar su contenido interno.
+  */
+  display: flex;
+
+  /*
+    flex-direction: column
+    Cambia el eje principal a vertical, los hijos se apilan de arriba hacia abajo.
+  */
+  flex-direction: column;
+}
+
+/* --------------------------------------------------------------
+  JCTU: Panel Izquierdo (Artículo Principal)
+-------------------------------------------------------------- */
+
+/*
+  flex: 2 1 0
+  ------------
+  flex-grow: 2
+    → Crece el doble que un item con grow:1
+
+  flex-shrink: 1
+    → Puede encogerse si falta espacio
+
+  flex-basis: 0
+    → El tamaño inicial es cero
+      (el contenido NO influye en el ancho inicial)
+
+  Resultado:
+    Este panel ocupa 2 partes del espacio disponible.
+*/
+.left {
+  flex: 2 1 0;
+}
+
+/* --------------------------------------------------------------
+JCTU: Panel Central (Hero): Imagen Destacada
+-------------------------------------------------------------- */
+
+.center {
+  /*
+    flex: 3 1 0
+    flex: <flex-grow> <flex-shrink> <flex-basis>
+    Este panel tiene mayor prioridad visual: ocupa 3 partes del espacio total.
+  */
+  flex: 3 1 0;
+  /*
+    align-self permite sobrescribir align-items SOLO para este item.
+    stretch asegura que ocupe toda la altura del contenedor flex.
+  */
+  align-self: stretch;
+}
+
+/*
+  La imagen llena completamente el panel central sin deformarse.
+*/
+.center img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* --------------------------------------------------------------
+  JCTU: Panel Derecho (Notas Rápidas)
+-------------------------------------------------------------- */
+
+.right {
+  /*
+    flex: 1 1 0
+    flex: <flex-grow> <flex-shrink> <flex-basis>
+    El ítem puede crecer, puede encogerse y su tamaño base inicial es 0.
+  */
+  flex: 1 1 0;
+
+  /*
+    justify-content actúa sobre el eje principal
+    (vertical, porque flex-direction es column).
+
+    space-between empuja el contenido:
+      - uno arriba
+      - otro abajo
+  */
+  justify-content: space-between;
+}
+
+/* --------------------------------------------------------------
+  JCTU: Elemento Decorativo (Badge)
+  No es un flex-item, pero se estiliza aquí para mantener el ejemplo autocontenido.
+-------------------------------------------------------------- */
+
+.badge {
+  background: #0077ff;
+  color: white;
+  padding: .4rem .7rem;
+  border-radius: 999px;
+  width: fit-content;
+  font-size: .8rem;
+}
+
+/* --------------------------------------------------------------
+  JCTU: Comportamiento Responsive (sin modificar el HTML)
+-------------------------------------------------------------- */
+
+/*
+  En pantallas menores a 900px: el layout cambia SIN modificar el HTML.
+*/
+@media (max-width: 900px) {
+
+  /*
+    flex-wrap: wrap
+    Permite que los flex-items bajen a la siguiente línea.
+  */
+  .container {
+    flex-wrap: wrap;
+  }
+
+  /*
+    order: -1
+    Cambia el orden visual del item, el panel central pasa a mostrarse primero.
+  */
+  .center {
+    order: -1;
+
+    /*
+      flex: 1 1 100%
+      flex: <flex-grow> <flex-shrink> <flex-basis>
+      Este item quiere ocupar todo el ancho, pero no es rígido, puede crecer
+      un poco más o encogerse si hace falta.
+    */
+    flex: 1 1 100%;
+
+    /*
+      Se fuerza una altura mínima para mantener impacto visual.
+    */
+    min-height: 240px;
+  }
+
+  /*
+    Los paneles laterales también pasan a ocupar todo el ancho.
+  */
+  .left, .right {
+    flex: 1 1 100%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<h1>ISIL - Ejemplo de Flexbox Especial</h1>
+
+<div class="container">
+
+  <!-- JCTU: Flex Item -->
+  <div class="panel left">
+    <h2>Artículo Principal</h2>
+    <p>
+      Flexbox permite crear layouts fluidos donde el contenido y el diseño
+      conviven sin pelearse. El tamaño inicial se controla con flex-basis,
+      y la distribución final se logra con flex-grow.
+    </p>
+  </div>
+
+  <!-- JCTU: Flex Item -->
+  <div class="panel center">
+    <img src="imgs/img01-paisaje001.jpg" alt="Paisaje">
+  </div>
+
+  <!-- JCTU: Flex Item -->
+  <div class="panel right">
+    <div>
+      <span class="badge">DESTACADO</span>
+      <h3>Notas rápidas</h3>
+      <p>
+        Este bloque se adapta al espacio restante y mantiene coherencia visual.
+      </p>
+    </div>
+    <small>Actualizado hoy</small>
+  </div>
+
+</div>
+
+</body>
+</html>

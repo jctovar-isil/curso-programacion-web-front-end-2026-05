@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ISIL - Layout con Container Queries y Inline-Block</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: sans-serif;
+        background-color: #f0f2f5;
+        padding: 20px;
+    }
+
+    /* 
+    ------------------------------------------------------------------------------------------
+    1. JCTU: Definicion del Contenedor Principal (.wrapper)
+    ------------------------------------------------------------------------------------------
+    Para usar @container, el padre debe tener 'container-type'.
+    */
+    .wrapper {
+        container-type: inline-size;
+        container-name: layout-principal;
+        background: white;
+        padding: 10px;
+        border: 2px solid #333;
+        max-width: 1200px;
+        margin: 0 auto;
+        /* Reset para eliminar espacios en blanco de inline-block */
+        font-size: 0; 
+    }
+
+    /*
+    ------------------------------------------------------------------------------------------
+    2.  JCTU: Estilos Base de los Items (Sin Flex/Grid) y Distribución con Inline-Block
+    ------------------------------------------------------------------------------------------
+    Usamos inline-block para que se pongan uno al lado del otro.
+    */
+    .item {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 1rem; /* Restauramos tamaño de fuente */
+        padding: 10px;
+        width: 100%; /* Por defecto: ocupan todo el ancho (móvil) */
+        transition: all 0.3s ease;
+    }
+
+    .content {
+        background: #007bff;
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+        height: 150px;
+    }
+
+    /*
+    ------------------------------------------------------------------------------------------
+    3.  JCTU: Media Query (Basado en el Navegador/Pantalla)
+    ------------------------------------------------------------------------------------------
+    Cambiamos el color de fondo de la página según el dispositivo.
+    */
+    @media (min-width: 1024px) {
+        body {
+        background-color: #e2e8f0;
+        }
+    }
+
+    /* 
+    ------------------------------------------------------------------------------------------
+    4. Container Queries (Basado en el ancho del Div .wrapper)
+    ------------------------------------------------------------------------------------------
+    Aquí es donde ocurre la magia de la distribución espacial.
+    */
+
+    /* Si el contenedor mide más de 500px: Ponemos 2 columnas */
+    @container layout-principal (min-width: 500px) {
+        .item {
+            width: 50%;
+        }
+        .content {
+            background: #28a745;
+        }
+    }
+
+    /* Si el contenedor mide más de 800px: Ponemos 3 columnas */
+    @container layout-principal (min-width: 800px) {
+        .item {
+            width: 33.33%;
+        }
+        .content {
+            background: #6f42c1;
+        }
+    }
+
+  /* Ejemplo de cambio específico para un elemento si el contenedor es muy ancho */
+    @container layout-principal (min-width: 1000px) {
+        .item:first-child {
+            width: 100%; /* El primero toma todo el ancho arriba */
+        }
+        .item:first-child .content {
+            background: #dc3545;
+            height: 100px;
+        }
+    }
+
+</style>
+</head>
+
+<body>
+
+    <h1>ISIL - Layout con Container Queries y Inline-Block</h1>
+
+    <p>
+    Cambia el tamaño de la ventana o del contenedor para ver cómo reaccionan los
+    elementos sin usar Grid ni Flexbox.
+    </p>
+
+    <div class="wrapper">
+        <div class="item">
+        <div class="content">Item 1</div>
+        </div>
+        <div class="item">
+        <div class="content">Item 2</div>
+        </div>
+        <div class="item">
+        <div class="content">Item 3</div>
+        </div>
+        <div class="item">
+        <div class="content">Item 4</div>
+        </div>
+    </div>
+
+    </body>
+
+</html>
