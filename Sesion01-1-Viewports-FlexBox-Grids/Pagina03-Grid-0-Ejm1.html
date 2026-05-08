@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ISIL - Ejemplo Basico con CSS Grid</title>
+
+<style>
+.container {  
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 0.5fr;
+    grid-auto-columns: 2fr;
+    grid-auto-rows: 2fr;
+    gap: 21px 26px;
+    grid-auto-flow: row;
+    justify-items: stretch;
+    grid-template-areas:
+        ". . "
+        ". . ";
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>ISIL - Ejemplo Basico con CSS Grid</h1>
+
+<div class="container">
+
+    <div class="item">
+        <img src="imgs/img01-paisaje001.jpg" alt="Paisaje 1">
+        <p>Paisaje natural con excelente iluminación.</p>
+    </div>
+
+    <div class="item">
+        <img src="imgs/img01-paisaje001.jpg" alt="Paisaje 2">
+        <p>Vista panorámica adaptada a cualquier pantalla.</p>
+    </div>
+
+    <div class="item">
+        <img src="imgs/img01-paisaje001.jpg" alt="Paisaje 3">
+        <p>Imagen responsive usando CSS Grid.</p>
+    </div>
+
+</div>
+
+</body>
+</html>

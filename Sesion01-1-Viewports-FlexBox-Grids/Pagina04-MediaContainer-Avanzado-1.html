@@ -36,6 +36,11 @@
         font-size: 0; 
     }
 
+    .wrapper_secundario_1 {
+        container-type: inline-size;
+        container-name: layout-secundario-1;
+    }
+
     /*
     ------------------------------------------------------------------------------------------
     2.  JCTU: Estilos Base de los Items (Sin Flex/Grid) y Distribución con Inline-Block
@@ -66,9 +71,14 @@
     ------------------------------------------------------------------------------------------
     Cambiamos el color de fondo de la página según el dispositivo.
     */
-    @media (min-width: 1024px) {
+    @media (max-width: 768px) {
         body {
-        background-color: #e2e8f0;
+            background-color: #e9e177;
+        }
+    }
+    @media (min-width: 769px) and (max-width: 1200px) {
+        body {
+            background-color: #e2e8f0;
         }
     }
 
@@ -110,6 +120,13 @@
         }
     }
 
+    /* Si el contenedor mide más de 500px: Ponemos 2 columnas */
+    @container layout-secundario-1 (min-width: 800px) {
+        * {
+            font-size: 64px;
+        }
+    }
+
 </style>
 </head>
 
@@ -123,6 +140,21 @@
     </p>
 
     <div class="wrapper">
+        <div class="item">
+        <div class="content">Item 1</div>
+        </div>
+        <div class="item">
+        <div class="content">Item 2</div>
+        </div>
+        <div class="item">
+        <div class="content">Item 3</div>
+        </div>
+        <div class="item">
+        <div class="content">Item 4</div>
+        </div>
+    </div>
+
+    <div class="wrapper_secundario_1">
         <div class="item">
         <div class="content">Item 1</div>
         </div>
