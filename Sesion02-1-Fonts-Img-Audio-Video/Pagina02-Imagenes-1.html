@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página con HTML semántico</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'ISIL-Font-1';
+            src: url(fonts/downloadme.woff2) format('woff2');
+        }
+        html {
+            font-size: 12px;
+        }
+        * {
+            font-family: 'Segoe UI', Tahoma, Arial, Helvetica, Roboto, 'SF Pro', sans-serif;
+            color: #2c3e50;
+        }
+        h1 {
+            font-family: 'ISIL-Font-1', Tahoma, Arial, Helvetica, Roboto, 'SF Pro', sans-serif;
+            color: #e74c3c;
+            font-size: 48px;
+        }
+        header {
+            font-size: 24px;
+        }
+        nav {
+            font-size: 48px;
+        }
+        ul {
+            font-size: 1.2rem;
+        }
+        article {
+            font-size: 20px;
+        }
+        h2 {
+            font-family: "Supermercado One", Tahoma, Arial, Helvetica, Roboto, 'SF Pro', sans-serif;
+            color: #2980b9;
+            /* article tiene font-size: 20px; entonces 1.2em es 120% del papa <article>, 
+               entonces seria 24px  */
+            font-size: 1.2em;
+        }
+        p {
+            font-family: 'Segoe UI', Tahoma, Arial, Helvetica, Roboto, 'SF Pro', sans-serif;
+            /* article tiene font-size: 20px; entonces 0.7em es 70% del papa <article>, 
+               entonces seria 14px  */
+            font-size: 0.7em;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Bienvenido a mi sitio</h1>
+      <p>Contenido introductorio con Lorem Ipsum.</p>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Acerca de</a></li>
+        <li><a href="#">Servicios</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+    <section>
+      <article>
+        <h2>Artículo principal</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus viverra
+          nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam
+          ultricies nisi vel augue.
+        </p>
+      </article>
+
+      <article>
+        <h2>Segundo artículo</h2>
+        <p>
+          Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas
+          tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet
+          adipiscing sem neque sed ipsum.
+        </p>
+      </article>
+    </section>
+
+    <!-- Imagenes avanzadas para carga por resolucion de pantalla -->
+    <section>
+      <article>
+        <h2>Artículo con imagen</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus viverra
+          nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam
+          ultricies nisi vel augue.
+        </p>
+        <img src="img/richard-stachmann-276x392.jpg" alt="Descripción de la imagen"
+             srcset="
+             img/richard-stachmann-276x392.jpg 552w,
+             img/richard-stachmann-552x783.jpg 800w,
+             img/richard-stachmann-1104x1565.jpg 1100w
+            "
+            sizes="
+            (max-width: 552px) 90w,
+            (max-width: 800px) 70w,
+            50w">
+      </article>
+    </section>
+
+    <!-- Imagenes avanzadas para carga diferida -->
+    <section>
+      <article>
+        <h2>Artículo con imagen</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus viverra
+          nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam
+          ultricies nisi vel augue.
+        </p>
+        <img src="img/img01-paisaje001.jpg" alt="Descripción de la imagen" loading="lazy">
+      </article>
+    </section>
+
+    <!-- Imagenes mas ligeras con Webp -->
+    <section>
+      <article>
+        <h2>Artículo con imagen</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus viverra
+          nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam
+          ultricies nisi vel augue.
+        </p>
+        <img src="img/richard-stachmann-552x783.jpg" alt="Descripción de la imagen" loading="lazy">
+        <br>
+        <img src="img/richard-stachmann-552x783.webp" alt="Descripción de la imagen" loading="lazy">
+      </article>
+    </section>
+
+    <!-- Video local descargado -->
+    <div>
+        <video controls width="960" height="540">
+            <source src="video/ardilla01.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
+    </div>
+
+    <figure>
+        <iframe width="659" height="370" 
+                src="https://www.youtube.com/embed/6uFPRyfDJLw" 
+                title="DEPORTES DE AVENTURA" 
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+    </figure>
+
+    
+
+    <footer>
+      <p>© 2026 Ejemplo de contenido con HTML semántico.</p>
+    </footer>
+  </body>
+</html>
