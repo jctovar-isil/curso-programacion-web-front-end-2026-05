@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "nombre": "Firulais",
+    "peso": 28.7,
+    "edad": 3,
+    "dimensiones": [
+      60,
+      200,
+      70
+    ],
+    "raza": "Bulldog Frances",
+    "dueno": "Juan Perez",
+    "foto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5uPaH-V_l8NwbUMrSFLCDUqESywpL31VKag&s"
+  },
+  {
+    "id": 2,
+    "nombre": "Simba",
+    "peso": 45,
+    "edad": 5,
+    "dimensiones": [
+      50,
+      210,
+      80
+    ],
+    "raza": "Cane Corso",
+    "dueno": "Kelly",
+    "foto": "https://www.abc.com.py/resizer/v2/V6BHEPFZ7RCNRMASMXRQ55PXYA.jpg?auth=fa70b789931bc78994d1e655b1e5bf5101ff623a1b49bf76248117181abb9209&width=770&smart=true"
+  },
+  {
+    "id": 4,
+    "nombre": "Holly",
+    "peso": 36,
+    "edad": 1,
+    "dimensiones": [
+      60,
+      156,
+      66
+    ],
+    "raza": "Golden Retriever",
+    "dueno": "Juan Carlos",
+    "foto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfKWCwIDhvZ37cbO44lh2drMjplR5pNpqG_Q&s"
+  },
+  {
+    "id": 5,
+    "nombre": "Lassie",
+    "peso": 44,
+    "edad": 7,
+    "dimensiones": [
+      70,
+      180,
+      70
+    ],
+    "raza": "Collie",
+    "dueno": "Daniela Lopez",
+    "foto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP2dB4jLQ7FIR79w4X7rspqvlsic3N5wFM6w&s"
+  }
+]

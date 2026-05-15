@@ -1,0 +1,17 @@
+{
+  "name": "sesion04-1-api-fakebackend-1",
+  "version": "1.0.0",
+  "description": "ISIL Curso de Programacion Web FrontEnd - Mayo 2026",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Juan Carlos Tovar",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}
