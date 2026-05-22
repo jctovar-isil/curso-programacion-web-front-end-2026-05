@@ -170,6 +170,42 @@
         .login-button:hover {
             background: #01182e;
         }
+        .rotate-scale-up-diag-1 {
+            /* Importante: Agregar block, inline-block o flex para las animaciones, no funciona con
+                           inline solamente  */
+            display: inline-block;
+            -webkit-animation: rotate-scale-up-diag-1 1.7s linear both;
+                    animation: rotate-scale-up-diag-1 1.7s linear both;
+        }
+        @-webkit-keyframes rotate-scale-up-diag-1 {
+            0% {
+                -webkit-transform: scale(1) rotate3d(1, 1, 0, 0deg);
+                        transform: scale(1) rotate3d(1, 1, 0, 0deg);
+            }
+            50% {
+                -webkit-transform: scale(2) rotate3d(1, 1, 0, -180deg);
+                        transform: scale(2) rotate3d(1, 1, 0, -180deg);
+            }
+            100% {
+                -webkit-transform: scale(1) rotate3d(1, 1, 0, -360deg);
+                        transform: scale(1) rotate3d(1, 1, 0, -360deg);
+            }
+        }
+        @keyframes rotate-scale-up-diag-1 {
+            0% {
+                -webkit-transform: scale(1) rotate3d(1, 1, 0, 0deg);
+                        transform: scale(1) rotate3d(1, 1, 0, 0deg);
+            }
+            50% {
+                -webkit-transform: scale(2) rotate3d(1, 1, 0, -180deg);
+                        transform: scale(2) rotate3d(1, 1, 0, -180deg);
+            }
+            100% {
+                -webkit-transform: scale(1) rotate3d(1, 1, 0, -360deg);
+                        transform: scale(1) rotate3d(1, 1, 0, -360deg);
+            }
+        }
+
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -187,6 +223,12 @@
     </script>
 </head>
 <body>
+    <div style="margin-bottom: 40px; text-align: center; color: #333; font-size: 18px;">
+        <span class="rotate-scale-up-diag-1">
+            Prueba de Rotacion y<br>
+            Escalado Diagonal
+        </span>
+    </div>
     <main class="login-container">
         <img src="imgs/login-612x612.jpg" alt="Logo de empresa">
         <h1>Iniciar sesión</h1>
