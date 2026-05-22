@@ -5,75 +5,186 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ISIL - Sesion No. 3 - Javascript</title>
+    <link rel="stylesheet" href="css/estilos1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akt:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <script src="scripts/script_poo.js" defer></script>
-    <!--<script src="scripts/script_dom_catalogo.js" defer></script>-->
     <script src="scripts/script_api_catalogo.js" defer></script>
-        <style>
-            #gatos {
-                display: flex;
-                gap: 20px;
-                flex-wrap: wrap;
-                justify-content: center;
-                align-items: stretch;
-                margin-top: 20px;
-            }
 
-            .gato-card {
-                display: flex;
-                flex-direction: column;
-                width: 260px;
-                border: 1px solid #ccc;
-                border-radius: 12px;
-                overflow: hidden;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-                background: #fff;
-            }
-
-            .gato-card img {
-                width: 100%;
-                height: 180px;
-                object-fit: cover;
-            }
-
-            .gato-contenido {
-                padding: 16px;
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .gato-contenido h3 {
-                margin: 0;
-                font-size: 1.2rem;
-                color: #333;
-            }
-
-            .gato-contenido p {
-                margin: 0;
-                color: #555;
-                line-height: 1.4;
-            }
-
-            .gato-contenido p span {
-                font-weight: 600;
-                color: #222;
-            }
-        </style>
     </head>
 
     <body>
-        <h1>ISIL - Sesion No. 3 - Javascript</h1>
-        <h2>Catalogo de Mascotas</h2>
+        <header>
+            <h1>ISIL - Sesion No. 3 - Javascript</h1>
+            <h2>Catalogo de Mascotas</h2>
+            <nav class="menu-superior">
+                <ul class="menu-lista">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="registro.html">Registro de Mascota</a></li>
+                    <li>
+                        <a href="sesiones.html">Sesiones</a>
+                        <ul class="submenu">
+                            <li><a href="sesion1.html">Sesión 1</a></li>
+                            <li><a href="sesion2.html">Sesión 2</a></li>
+                            <li><a href="sesion3.html">Sesión 3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <ol class="breadcrumb-list">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="sesiones.html">Sesiones</a></li>
+                    <li>Sesión 3</li>
+                </ol>
+            </nav>
+        </header>
 
-        <div id="catalogo">
-            <div id="gatos">
-                <!--
-                    Aquí se mostrarán las tarjetas de los gatos obtenidos del catálogo
-                    desde el scripts/script_api_catalogo.js, que hace una petición al 
-                    servidor para obtener el catálogo de mascotas registrado.
-                  -->
+        <div id="menu_lateral_mas_catalogo">
+            <div id="menu_lateral_acordeon">
+                <!-- Agregamos un menu tipo acordeon de las categorias de las mascotas -->
+                 <div class="acordeon-item">
+                    <button class="acordeon-header" aria-expanded="false" aria-controls="acordeon-content-gatos">Gatos</button>
+                    <div id="acordeon-content-gatos" class="acordeon-content">
+                        <ul>
+                            <li><a href="#">Gato Persa</a></li>
+                            <li><a href="#">Gato Siamés</a></li>
+                            <li><a href="#">Gato Maine Coon</a></li>
+                        </ul>
+                    </div>
+                    <button class="acordeon-header" aria-expanded="false" aria-controls="acordeon-content-perros">Perros</button>
+                    <div id="acordeon-content-perros" class="acordeon-content" hidden>
+                        <ul>
+                            <li><a href="#">Perro Labrador</a></li>
+                            <li><a href="#">Perro Pastor Alemán</a></li>
+                            <li><a href="#">Perro Chihuahua</a></li>
+                        </ul>
+                    </div>
+                    <button class="acordeon-header" aria-expanded="false" aria-controls="acordeon-content-aves">Aves</button>
+                    <div id="acordeon-content-aves" class="acordeon-content" hidden>
+                        <ul>
+                            <li><a href="#">Ave Canaria</a></li>
+                            <li><a href="#">Ave Periquito</a></li>
+                            <li><a href="#">Ave Cacatúa</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="catalogo">
+                <div id="gatos">
+                    <!--
+                        Aquí se mostrarán las tarjetas de los gatos obtenidos del catálogo
+                        desde el scripts/script_api_catalogo.js, que hace una petición al 
+                        servidor para obtener el catálogo de mascotas registrado.
+                    -->
+                </div>
             </div>
         </div>
+
+        <div id="servicios">
+            <h2>Servicios</h2>
+            <p>Ofrecemos una amplia gama de servicios para el cuidado de tus mascotas.</p>
+            <div id="carrousel">
+                <div class="carousel-wrapper">
+                    <div class="carousel-track">
+                        <div class="carousel-slide"><img src="https://picsum.photos/seed/slide1/800/600" alt="Foto 1"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/seed/slide2/800/600" alt="Foto 2"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/seed/slide3/800/600" alt="Foto 3"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/seed/slide4/800/600" alt="Foto 4"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/seed/slide5/800/600" alt="Foto 5"></div>
+                    </div>
+                    <div class="carousel-buttons">
+                        <button class="carousel-button prev" type="button" aria-label="Anterior">&#10094;</button>
+                        <button class="carousel-button next" type="button" aria-label="Siguiente">&#10095;</button>
+                    </div>
+                    <div class="carousel-dots" aria-label="Paginación del carrusel">
+                        <button class="carousel-dot active" type="button" data-index="0"></button>
+                        <button class="carousel-dot" type="button" data-index="1"></button>
+                        <button class="carousel-dot" type="button" data-index="2"></button>
+                        <button class="carousel-dot" type="button" data-index="3"></button>
+                        <button class="carousel-dot" type="button" data-index="4"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Agregar un chatbot en la parte inferior derecha -->
+         <div id="chatbot" style="position: fixed; bottom: 20px; right: 20px; width: 300px; height: 400px; background: #fff; border: 1px solid #ccc; border-radius: 12px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); display: flex; flex-direction: column;">
+            <div style="background: #04790e; color: #fff; padding: 12px; border-top-left-radius: 12px; border-top-right-radius: 12px;">Chatbot</div>
+            <div id="chatbot-messages" style="flex: 1; padding: 12px; overflow-y: auto;"></div>
+            <form id="chatbot-form" style="display: flex; border-top: 1px solid #ccc;">
+                <input type="text" id="chatbot-input" placeholder="Escribe tu mensaje..." style="flex: 1; border: none; padding: 12px;">
+                <button type="submit" style="border: none; background: #160202; color: #fff; padding: 12px 16px; cursor: pointer;">Enviar</button>
+            </form>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 ISIL - Todos los derechos reservados.</p>
+        </footer>
+
+        <script>
+            //Script que maneja la interaccion del carrousel, permitiendo navegar entre las fotos usando los botones y los puntos de paginacion.
+            document.addEventListener('DOMContentLoaded', function () {
+
+                const track = document.querySelector('.carousel-track');
+                const slides = Array.from(track.children);
+                const dots = Array.from(document.querySelectorAll('.carousel-dot'));
+                const prevButton = document.querySelector('.carousel-button.prev');
+                const nextButton = document.querySelector('.carousel-button.next');
+                let currentIndex = 0;
+
+                function updateCarousel(index) {
+                    currentIndex = (index + slides.length) % slides.length;
+                    track.style.transform = 'translateX(' + (-currentIndex * 100) + '%)';
+                    dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+                }
+
+                prevButton.addEventListener('click', function () {
+                    updateCarousel(currentIndex - 1);
+                });
+
+                nextButton.addEventListener('click', function () {
+                    updateCarousel(currentIndex + 1);
+                });
+
+                dots.forEach(function (dot) {
+                    dot.addEventListener('click', function () {
+                        updateCarousel(Number(this.dataset.index));
+                    });
+                });
+
+                function autoSlide() {
+                    updateCarousel(currentIndex + 1);
+                }
+                //Se ejecuta cada 3 segundos para avanzar automaticamente al siguiente slide del carrousel, creando un efecto de slideshow.
+                const autoSlideInterval = setInterval(autoSlide, 3000);
+
+                window.addEventListener('resize', function () {
+                    track.style.transition = 'none';
+                    updateCarousel(currentIndex);
+                    requestAnimationFrame(function () {
+                        track.style.transition = '';
+                    });
+                });
+            });
+
+            //Script para la interaccion (toggle) del menu acordeon lateral, permitiendo mostrar u ocultar las categorias de mascotas al hacer click en los headers del acordeon.
+            document.addEventListener('DOMContentLoaded', function () {
+                const acordeonHeaders = document.querySelectorAll('.acordeon-header');
+                acordeonHeaders.forEach(function (header) {
+                    header.addEventListener('click', function () {
+                        const expanded = this.getAttribute('aria-expanded') === 'true';
+                        this.setAttribute('aria-expanded', !expanded);
+                        const content = document.getElementById(this.getAttribute('aria-controls'));
+                        if (content) {
+                            content.hidden = expanded;
+                        }
+                    });
+                });
+            });
+        </script>
 </body>
 
 </html>

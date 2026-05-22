@@ -1,0 +1,280 @@
+* {
+  font-family: "Playfair", Verdana, Tahoma, sans-serif;
+}
+
+h1,
+h2 {
+  font-family: "Akt", Verdana, Tahoma, sans-serif;
+}
+
+/* Estilos para el catalogo de mascotas */
+
+#gatos {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  margin-top: 20px;
+}
+
+.gato-card {
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  background: #fff;
+}
+
+.gato-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.gato-contenido {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gato-contenido h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.gato-contenido p {
+  margin: 0;
+  color: #555;
+  line-height: 1.4;
+}
+
+.gato-contenido p span {
+  font-weight: 600;
+  color: #222;
+}
+
+/* Estilos para el menú superior */
+
+.menu-superior {
+  background: #160202;
+  color: #fff;
+}
+
+.menu-superior .menu-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menu-superior .menu-lista li {
+  margin: 0;
+}
+
+.menu-superior .menu-lista li a {
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu-superior .menu-lista li a:hover {
+  background: #555;
+}
+
+.menu-superior .menu-lista li .submenu {
+  display: none;
+  position: absolute;
+  background: #333;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-superior .menu-lista li:hover .submenu {
+  display: block;
+}
+
+/* Estilos para el carrusel */
+
+#carrousel {
+  max-width: 960px;
+  margin: 40px auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+  background: #111;
+}
+
+.carousel-wrapper {
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.45s ease;
+  will-change: transform;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
+.carousel-buttons {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.carousel-button {
+  pointer-events: auto;
+  border: none;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 12px;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.carousel-button:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 0;
+  background: #111;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  border: 0;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.carousel-dot.active {
+  background: #fff;
+  transform: scale(1.1);
+}
+
+@media (max-width: 720px) {
+  #carrousel {
+    width: calc(100% - 24px);
+    margin: 24px auto;
+  }
+
+  .carousel-button {
+    width: 40px;
+    height: 40px;
+    margin: 0 8px;
+  }
+}
+
+/* Estilos para el breadcrumb */
+
+.breadcrumb {
+  background: #f5f5f5;
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin-top: 12px;
+}
+
+.breadcrumb-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+}
+
+.breadcrumb-list li {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-list li a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.breadcrumb-list li a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-list li:not(:last-child)::after {
+  content: ">";
+  margin-left: 8px;
+  color: #555;
+}
+
+/* Estilos para el menú lateral (acordeon) y catálogo */
+
+#menu_lateral_mas_catalogo {
+  display: flex;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+#menu_lateral_acordeon {
+  width: 240px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.acordeon-header {
+  width: 100%;
+  padding: 12px 16px;
+  background: #f5f5f5;
+  border: none;
+  text-align: left;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.acordeon-header:hover {
+  background: #e0e0e0;
+}
+
+.acordeon-content {
+  padding: 12px 16px;
+}
