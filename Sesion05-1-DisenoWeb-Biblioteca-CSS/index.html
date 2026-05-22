@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Supermercado+One&display=swap" rel="stylesheet">
+    <link href="https://cdn.metroui.org.ua/4.5.12/icons.css" rel="stylesheet">
+  <title>Hoteles Tecnológicos</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header, footer {
+      background-color: #AB04D9;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      flex: 1;
+      padding: 20px;
+      text-align: center;
+    }
+    .header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: stretch;
+    }
+    .container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: stretch;
+    }
+    .container > div {
+      flex: 1;
+      /* Fijar el ancho de los elementos hijos */
+      min-width: 400px;
+    }
+    .imagen-principal {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .form-contacto-1 {
+      background-color: #ebdbd1;
+      color: #A67153;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .promociones-1 {
+      background-color: #0460D9;
+      color: #FFFFFF;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      font-family: "Montserrat", sans-serif;
+    }
+    * {
+      font-family: "Cardo", serif;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div>
+        <!--Agregar logotipo-->
+        <img src="imgs/logo01.png" alt="Logotipo Hoteles Tecnológicos" width="200" height="200">
+    </div>
+    <div>
+        <h1>Bienvenido a Hoteles Tecnológicos</h1>
+        <p>Descubre la mejor experiencia en alojamiento digital.</p>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+         <div class="form-contacto-1">
+            <span class="mif-train"></span>
+            <span class="mif-train mif-lg fg-cyan"></span>
+            <span class="mif-train mif-2x fg-pink"></span>
+            <span class="mif-train mif-3x fg-green"></span>
+            <span class="mif-train mif-4x fg-red"></span>
+            <span class="mif-train mif-5x fg-blue"></span>
+            <p>Promociones y ofertas exclusivas para los amantes de la tecnología. Disfruta de una
+            estancia única con nuestras habitaciones equipadas con lo último en tecnología, desde
+            asistentes virtuales hasta sistemas de entretenimiento de última generación. 
+            ¡Reserva ahora y vive la experiencia tecnológica en su máxima expresión!</p>
+        </div>
+        <div>
+            <img class="imagen-principal" src="imgs/hoteles-tecnologicos-1.jpeg" alt="Hoteles Tecnológicos">
+        </div>
+        <div class="form-contacto-1">
+            <!-- Agregar formulario de contacto -->
+            <h2>Contáctanos</h2>
+            <form action="#" method="post">
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="nombre" name="nombre" required><br><br>
+                <label for="email">Correo Electrónico:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="mensaje">Mensaje:</label><br>
+                <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br><br>
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+        <div class="promociones-1">
+            <!-- Agregar promociones -->
+            <h2>Promociones Exclusivas</h2>
+            <ul>
+                <li>Descuento del 20% en tu primera reserva.</li>
+                <li>Paquete tecnológico: habitación + gadgets por un precio especial.</li>
+                <li>Acceso gratuito a eventos tecnológicos exclusivos para nuestros huéspedes.</li>
+            </ul>
+        </div>
+    </div>
+  </main>
+  <footer>
+    <p>© 2026 Hoteles Tecnológicos. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
