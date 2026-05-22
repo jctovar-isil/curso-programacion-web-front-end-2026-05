@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Mascota</title>
+    <script src="scripts/script_api_mascota.js" defer></script>
+</head>
+<body>
+    <h1>Registro de Mascota</h1>
+    <form id="mascotaForm">
+        <label for="id">ID:</label>
+        <input type="number" id="id" value="1" required><br><br>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" value="Firulais" required><br><br>
+        <label for="peso">Peso:</label>
+        <input type="number" step="0.1" id="peso" value="28.7" required><br><br>
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" value="3" required><br><br>
+        <label for="dimension1">Dimensión 1:</label>
+        <input type="number" id="dimension1" value="60" required><br>
+        <label for="dimension2">Dimensión 2:</label>
+        <input type="number" id="dimension2" value="200" required><br>
+        <label for="dimension3">Dimensión 3:</label>
+        <input type="number" id="dimension3" value="70" required><br><br>
+        <label for="raza">Raza:</label>
+        <input type="text" id="raza" value="Bulldog Frances" required><br><br>
+        <label for="dueno">Dueño:</label>
+        <input type="text" id="dueno" value="Juan Perez" required><br><br>
+        <label for="foto">Foto:</label>
+        <input type="text" id="foto" value="foto.jpg" required><br><br>
+        <button type="submit">Registrar</button>
+    </form>
+</body>
+</html>

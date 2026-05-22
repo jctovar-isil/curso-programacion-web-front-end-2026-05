@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISIL - Sesion No. 3 - Javascript</title>
+    <script src="scripts/script_poo.js" defer></script>
+    <!--<script src="scripts/script_dom_catalogo.js" defer></script>-->
+    <script src="scripts/script_api_catalogo.js" defer></script>
+        <style>
+            #gatos {
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: stretch;
+                margin-top: 20px;
+            }
+
+            .gato-card {
+                display: flex;
+                flex-direction: column;
+                width: 260px;
+                border: 1px solid #ccc;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+                background: #fff;
+            }
+
+            .gato-card img {
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+            }
+
+            .gato-contenido {
+                padding: 16px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .gato-contenido h3 {
+                margin: 0;
+                font-size: 1.2rem;
+                color: #333;
+            }
+
+            .gato-contenido p {
+                margin: 0;
+                color: #555;
+                line-height: 1.4;
+            }
+
+            .gato-contenido p span {
+                font-weight: 600;
+                color: #222;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>ISIL - Sesion No. 3 - Javascript</h1>
+        <h2>Catalogo de Mascotas</h2>
+
+        <div id="catalogo">
+            <div id="gatos">
+                <!--
+                    Aquí se mostrarán las tarjetas de los gatos obtenidos del catálogo
+                    desde el scripts/script_api_catalogo.js, que hace una petición al 
+                    servidor para obtener el catálogo de mascotas registrado.
+                  -->
+            </div>
+        </div>
+</body>
+
+</html>
