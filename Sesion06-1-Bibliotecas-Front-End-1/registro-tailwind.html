@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Mascota</title>
+    <!-- Tailwind via CDN -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="scripts/script_api_mascota.js" defer></script>
+</head>
+<body class="bg-gray-50 py-8">
+    <div class="max-w-md mx-auto">
+        <h1 class="text-3xl font-bold text-gray-900 mb-6">Registro de Mascota</h1>
+        <div id="container-form" class="bg-white p-6 rounded-lg shadow-md">
+            <form id="mascotaForm">
+                <div class="mb-4">
+                    <label for="exampleInputEmail1" class="block text-sm font-medium text-gray-700 mb-1">Email address</label>
+                    <input type="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="text-sm text-gray-600 mt-1">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-4">
+                    <label for="id" class="block text-sm font-medium text-gray-700 mb-1">ID:</label>
+                    <input type="number" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" id="id" value="1" required>
+                    <div id="idHelp" class="text-sm text-gray-600 mt-1">ID de la Mascota.</div>
+                </div>
+                <div class="mb-4">
+                    <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">Nombre:</label>
+                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" id="nombre" required>
+                    <div id="idNombre" class="text-sm text-gray-600 mt-1">Nombre de la Mascota.</div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="peso" class="block text-sm font-medium text-gray-700 mb-1">Peso:</label>
+                    <input type="number" step="0.1" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" id="peso" value="28.7" required>
+                </div>
+                <div class="mb-4">
+                    <label for="edad" class="block text-sm font-medium text-gray-700 mb-1">Edad:</label>
+                    <input type="number" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" id="edad" value="3" required>
+                </div>
+                <div class="mb-4">
+                    <label for="dimension1" class="block text-sm font-medium text-gray-700 mb-1">Dimensión 1:</label>
+                    <input type="number" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" id="dimension1" value="60" required>
+                </div>
+                <div class="mb-4">
+                    <label for="dimension2" class="block text-sm font-medium text-gray-700 mb-1">Dimensión 2:</label>
+                    <input type="number" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" id="dimension2" value="200" required>
+                </div>
+                <div class="mb-4">
+                    <label for="dimension3" class="block text-sm font-medium text-gray-700 mb-1">Dimensión 3:</label>
+                    <input type="number" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" id="dimension3" value="70" required>
+                </div>
+                <div class="mb-4">
+                    <label for="raza" class="block text-sm font-medium text-gray-700 mb-1">Raza:</label>
+                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" id="raza" value="Bulldog Frances" required>
+                </div>
+                <div class="mb-4">
+                    <label for="dueno" class="block text-sm font-medium text-gray-700 mb-1">Dueño:</label>
+                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" id="dueno" value="Juan Perez" required>
+                </div>
+                <div class="mb-6">
+                    <label for="foto" class="block text-sm font-medium text-gray-700 mb-1">Foto:</label>
+                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" id="foto" value="foto.jpg" required>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition duration-200">Registrar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
